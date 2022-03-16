@@ -12,11 +12,17 @@
 <body>
 
     <main id="root">
-        <div class="row">
+        <div class="row justify-content-center pt-5">
             <div class="col-4">
-                <div class="input-group-sm mb-3 p-4">
-                    <input v-model="message" type="text" class="form-control">
-                    <h1 class="pt-3">{{message}}</h1>
+                <div class="input-group-sm p-4">
+                    <input v-model="message" type="text" class="form-control" placeholder="Scrivi qualcosa">
+                    <input v-model="myImage" type="text" class="form-control mt-3" placeholder="Inserisci un'immagine">
+                </div>
+                <h1 class="pt-3 fs-4 d-inline pe-2">Testo:</h1>
+                <h1 v-bind:style="myClasses" class="pt-3 d-inline">{{message}}</h1>
+                <div class="w-100 h-100 text-center pt-3">
+                    <h4>La tua immagine</h4>
+                    <img class="img-fluid" :src="myImage" alt="Your image">
                 </div>
             </div>
         </div>
